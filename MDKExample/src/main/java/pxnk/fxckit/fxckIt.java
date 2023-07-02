@@ -1,9 +1,7 @@
 package pxnk.fxckit;
 
 import org.lwjgl.input.Keyboard;
-
 import pxnk.fxckit.Render;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundCategory;
 import net.minecraft.client.settings.GameSettings;
@@ -28,12 +26,9 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 public class fxckIt {
 
 	private final Render renderEventHandler = new Render();
-
     public static final String MODID = "FI";
     public static final String VERSION = "1.0";
-
     private static final KeyBinding MUTE = new KeyBinding("Toggle Mute", Keyboard.KEY_M, "Keyn Mute Bind");
-
     private float recordedSoundLevel;
 
     @EventHandler
@@ -45,7 +40,8 @@ public class fxckIt {
 
     @SubscribeEvent
     public void onKey(InputEvent.KeyInputEvent e) {
-        if (!MUTE.isKeyDown()) {
+      
+    	if (!MUTE.isKeyDown()) {
             return;
         }
 
