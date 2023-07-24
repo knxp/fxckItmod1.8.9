@@ -1,7 +1,8 @@
-package pxnk.fxckit;
+package pxnk.mutemod;
 
 import org.lwjgl.input.Keyboard;
-import pxnk.fxckit.Render;
+
+import mutemod.commands.MutePos;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundCategory;
 import net.minecraft.client.settings.GameSettings;
@@ -18,13 +19,15 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
+import pxnk.mutemod.Render;
+
 import org.lwjgl.input.Keyboard;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
-public class fxckIt {
+public class MuteMod {
 
 	private final Render renderEventHandler = new Render();
     public static final String MODID = "FI";
@@ -41,9 +44,8 @@ public class fxckIt {
     
     @EventHandler
     public void serverLoad(FMLServerStartingEvent event) {
-    	
     	// command
-    	event.registerServerCommand(new MyFirstCommand());
+    	event.registerServerCommand(new MutePos());
     }
     
 
