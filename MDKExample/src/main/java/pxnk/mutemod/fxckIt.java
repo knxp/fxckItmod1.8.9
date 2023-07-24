@@ -15,6 +15,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import org.lwjgl.input.Keyboard;
@@ -37,6 +38,14 @@ public class fxckIt {
            MinecraftForge.EVENT_BUS.register(this);
            MinecraftForge.EVENT_BUS.register(renderEventHandler);
     }
+    
+    @EventHandler
+    public void serverLoad(FMLServerStartingEvent event) {
+    	
+    	// command
+    	event.registerServerCommand(new MyFirstCommand());
+    }
+    
 
     @SubscribeEvent
     public void onKey(InputEvent.KeyInputEvent e) {
